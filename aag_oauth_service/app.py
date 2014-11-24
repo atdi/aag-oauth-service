@@ -2,7 +2,6 @@ __author__ = 'aurel'
 
 import os
 import yaml
-
 from flask import Flask as BaseFlask, Config as BaseConfig
 
 
