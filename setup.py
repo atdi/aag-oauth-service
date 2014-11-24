@@ -1,7 +1,7 @@
 from distutils.core import setup
 
 setup(
-    name='aag_oauth_service-oauth-service',
+    name='aag_oauth_service',
     version='0.0.1',
     packages=[''],
     url='',
@@ -13,6 +13,7 @@ setup(
               'flask===0.10.1',
               'flask-oauthlib===0.7.0',
               'flask-sqlalchemy',
+              'pyyaml',
               'sqlalchemy',
               'behave',
               'requests',
