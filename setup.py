@@ -13,6 +13,7 @@ setup(
               'flask===0.10.1',
               'flask-oauthlib===0.7.0',
               'flask-sqlalchemy',
+              'pyyaml',
               'sqlalchemy',
               'behave',
               'requests',
