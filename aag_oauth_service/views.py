@@ -1,23 +1,23 @@
 __author__ = 'aurel'
 
-
+from aag_oauth_service.clients import UserClient
 from aag_oauth_service import app, oauth, db
 from datetime import datetime, timedelta
 from flask import session, jsonify, request, \
     redirect, render_template
 from werkzeug.security import gen_salt
-import requests
+from .models import Client, Token, Grant
+
+
+user_client = UserClient()
 
 
 ########################################
 # Get the current user from user service
-from .models import Client, Token, Grant
-
-
 def current_user():
     if 'id' in session:
         uid = session['id']
-        response = requests.get(app.config['USER_SERVICE_URL']+'/api/users/'+str(uid))
+        response = user_client.get_user(uid)
         if response.status_code == 200:
             return response.json()
     return None
@@ -28,8 +28,8 @@ def home():
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
-        #user = UserClient.login_user(username, password)
-        #session['id'] = user.id
+        user = user_client.login(username, password)
+        session['id'] = user.id
         return redirect('/')
     user = current_user()
     return render_template('home.html', user=user)
