@@ -13,6 +13,7 @@ class Config(object):
     USER_SERVICE_URL = 'http://localhost:5000'
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'users.db')
     SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
+    USER_SERVICE_URL='http://localhost:5000'
 
 
 class ProductionConfig(Config):
