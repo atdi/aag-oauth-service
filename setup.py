@@ -9,7 +9,7 @@ setup(
     author='aurel',
     author_email='aurel.avramescu@gmail.com',
     description='',
-    requires=['tornado===4.0.2',
+    install_requires=['tornado===4.0.2',
               'flask===0.10.1',
               'flask-oauthlib===0.7.0',
               'flask-sqlalchemy',
