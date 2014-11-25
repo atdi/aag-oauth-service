@@ -1,6 +1,6 @@
 __author__ = 'aurel'
 
-from aag_oauth_service.oauth import db
+from aag_oauth_service import db
 
 
 class Client(db.Model):
